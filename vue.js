@@ -3,6 +3,10 @@ createApp({
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    log() {
+      console.log("hello");
+    },
+  },
   mounted() {},
 }).mount("#app");
