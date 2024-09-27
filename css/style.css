@@ -72,7 +72,14 @@ nav a {
 }
 @media (min-width: 768px) {
   .project {
-    width: 80%;
+    width: 60%;
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .project {
+    width: 42%;
     grid-template-columns: 1fr 1fr;
     padding: 24px;
   }
