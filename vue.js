@@ -8,16 +8,17 @@ createApp({
   },
   computed : {
     gradiant(){
-      return {backgroundImage : `radial-gradient(circle at ${this.mouseX}% ${this.mouseY}px, #393d8a, #191a30 65%)`}
+      return {backgroundImage : `radial-gradient(circle at ${this.mouseX}% ${this.mouseY}px, #393d8a, #212241 55%)`}
     }
       },
   methods: {
-    test(event){
+    cursor(event){
       let width = window.innerWidth;
       this.mouseX = (event.clientX / width) * 100;
       this.mouseY = event.clientY;
     }
   },
-  mounted() {},
+  mounted() {
+  },
 
 }).mount("#app");

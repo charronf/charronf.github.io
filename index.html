@@ -4,59 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Permanent+Marker&display=swap" rel="stylesheet">
     <title>Portfolio</title>
 </head>
 
 <body>
     <div id="app">
-        <div class="overlay" @mousemove="(event) => test(event)">
+        <div class="overlay" @mousemove="(event) => cursor(event)">
             <header>
                 <img src="" alt="" class="logo">
                 <nav>
+                    {{scroll}}
                     <a href="" class="work">Work</a>
                     <a href="" class="about">About</a>
                     <a href="" class="contact">Contact</a>
                 </nav>
             </header>
-            <main :style="gradiant">
-                <h1>Hi! I'm Frédéric</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero iste qui.</p>
+            <main style="background-image: radial-gradient(circle at 0px 0px, #393d8a, #212241 55%)" :style="gradiant">
+                <section class="banner">
 
-                <section>
-                    <h2>My skills</h2>
-                    <ul>
-                        <li>
-                            Lorem.
-                        </li>
-                        <li>
-                            Lorem.
-                        </li>
-                    </ul>
+                    <h1>Hi! I'm Frédéric</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero iste qui.</p>
+
+                    <section>
+                        <h2>My skills</h2>
+                        <ul>
+                            <li>
+                                Lorem.
+                            </li>
+                            <li>
+                                Lorem.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <h2>Check out my work ⇊</h2>
                 </section>
-
-                <h2>Check out my work ⇊</h2>
                 <section class="projects">
                     <div class="project">
-                        <div class="projectdesc">
+                        <div class="project-desc">
                             <h3>Project title</h3>
                             <p>Project description</p>
-                            <a href="">
+                            <a href="https://github.com" class="github">
+                                Github
                                 <img src="media/github.svg" alt="github link">
                             </a>
                         </div>
                         <img src="https://placehold.co/300x450" alt="project image" class="project-thumb">
                     </div>
                     <div class="project">
-                        <div class="projectdesc">
+                        <div class="project-desc">
                             <h3>Project title</h3>
                             <p>Project description</p>
-                            <a href="">
+                            <a href="https://github.com" class="github">
                                 <img src="media/github.svg" alt="github link">
                             </a>
                         </div>
@@ -66,10 +70,10 @@
 
                     </div>
                     <div class="project">
-                        <div class="projectdesc">
+                        <div class="project-desc">
                             <h3>Project title</h3>
                             <p>Project description</p>
-                            <a href="">
+                            <a href="https://github.com" class="github">
                                 <img src="media/github.svg" alt="github link">
                             </a>
                         </div>
@@ -83,6 +87,16 @@
             </footer>
         </div>
     </div>
+    <script setup lang="ts">
+        import { useScroll } from '@vueuse/core'
+        
+        const el = ref<HTMLElement | null>(null)
+        const { x, y, isScrolling, arrivedState, directions } = useScroll(el)
+        </script>
+        
+        <template>
+          <div ref="el" />
+        </template>
     <script type="module" src="vue.js"></script>
 </body>
 
