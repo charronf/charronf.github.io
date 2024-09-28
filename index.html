@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
     <title>Portfolio</title>
 </head>
 
@@ -18,38 +19,31 @@
             <header>
                 <img src="" alt="" class="logo">
                 <nav>
-                    {{scroll}}
                     <a href="" class="work">Work</a>
                     <a href="" class="about">About</a>
                     <a href="" class="contact">Contact</a>
+                    <a href="CV.pdf" download>Download CV</a>
                 </nav>
             </header>
             <main style="background-image: radial-gradient(circle at 0px 0px, #393d8a, #212241 55%)" :style="gradiant">
                 <section class="banner">
 
                     <h1>Hi! I'm Frédéric</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero iste qui.</p>
+                    <p>I’m an aspiring web developer eager to create engaging, user-friendly websites. Check out my work !</p>
 
                     <section>
                         <h2>My skills</h2>
-                        <ul>
-                            <li>
-                                Lorem.
-                            </li>
-                            <li>
-                                Lorem.
-                            </li>
-                        </ul>
                     </section>
 
-                    <h2>Check out my work ⇊</h2>
                 </section>
                 <section class="projects">
                     <div class="project">
                         <div class="project-desc">
-                            <h3>Project title</h3>
-                            <p>Project description</p>
-                            <a href="https://github.com" class="github">
+                            <h3>Restaurant pub website</h3>
+                            <p>Academic project for a restaurant website, built with HTML, CSS, JavaScript. Has a
+                                fully functional backend for managing the restaurant's menu written in PHP, and a
+                                database with MySQL.</p>
+                            <a href="https://github.com/fcharron-cstj/Projet-web1" class="github">
                                 Github
                                 <img src="media/github.svg" alt="github link">
                             </a>
@@ -58,22 +52,28 @@
                     </div>
                     <div class="project">
                         <div class="project-desc">
-                            <h3>Project title</h3>
-                            <p>Project description</p>
-                            <a href="https://github.com" class="github">
+                            <h3>Python bot</h3>
+                            <p>Little personal project for fun. Automated python script that performs actions on a game,
+                                such as looting resources,
+                                attacking, and restarting the game. Uses the pytesseract library to
+                                read text and numbers from the screen and the pyautogui library to match images with
+                                screen coordinates, aswell as send keyboard and mouse inputs to the game. Written in python.</p>
+                            <a href="https://github.com/fcharron-cstj/Python-bot" class="github">
+                                Github
                                 <img src="media/github.svg" alt="github link">
                             </a>
                         </div>
-
-
-                        <img src="https://placehold.co/300x450" alt="project image" class="project-thumb">
+                        <img src="media/python-bot.png" alt="project image" class="project-thumb">
 
                     </div>
                     <div class="project">
                         <div class="project-desc">
-                            <h3>Project title</h3>
-                            <p>Project description</p>
-                            <a href="https://github.com" class="github">
+                            <h3>Nohit mod</h3>
+                            <p>I created this simple terraria mod for a no-hit playthrough with friends. Every no-hit
+                                mod publicly available broke in multiplayer, so I decided to write my own. Makes players
+                                die in one hit by bosses, massively increasing the difficulty of the game. Written in C#</p>
+                            <a href="https://github.com/fcharron-cstj/NoHit-mod" class="github">
+                                Github
                                 <img src="media/github.svg" alt="github link">
                             </a>
                         </div>
@@ -87,16 +87,6 @@
             </footer>
         </div>
     </div>
-    <script setup lang="ts">
-        import { useScroll } from '@vueuse/core'
-        
-        const el = ref<HTMLElement | null>(null)
-        const { x, y, isScrolling, arrivedState, directions } = useScroll(el)
-        </script>
-        
-        <template>
-          <div ref="el" />
-        </template>
     <script type="module" src="vue.js"></script>
 </body>
 
