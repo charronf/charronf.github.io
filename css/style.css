@@ -17,7 +17,7 @@ body {
 }
 
 main {
-  padding-top: 120px;
+  padding-top: 180px;
   color: white;
   background-color: #212241;
   background-attachment: fixed;
@@ -27,8 +27,12 @@ main {
 header {
   position: fixed;
   color: white;
-  height: 120px;
+  height: 95px;
   width: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav {
@@ -38,6 +42,24 @@ nav {
   font-size: 24px;
   font-family: "Permanent Marker", cursive;
 }
+nav .underline {
+  position: relative;
+  font-size: 24px;
+}
+nav .underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+nav .underline:hover::after {
+  width: 100%;
+  left: 0;
+}
 
 nav a {
   color: white;
@@ -45,7 +67,8 @@ nav a {
 }
 
 .project {
-  opacity: 100%;
+  opacity: 0%;
+  transition: opacity 0.8s ease-in-out;
   width: 90%;
   background-color: rgb(240, 240, 240);
   box-shadow: rgb(0, 0, 5) 3px 3px;
@@ -95,6 +118,7 @@ nav a {
   flex-direction: column;
   gap: 120px;
   height: 110%;
+  scroll-margin-top: 120px;
 }
 
 .project-thumb {
@@ -108,7 +132,7 @@ nav a {
   width: 65%;
   margin: auto;
   height: 800px;
-  font-family: "Lilita One", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 24px;
   line-height: 1.5;
 }
@@ -123,11 +147,16 @@ nav a {
     display: block;
   }
 }
+.project-desc h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+}
 
-.github {
+.links {
   background-color: #dddddd;
   padding: 0px 4px;
   display: flex;
+  gap: 4px;
   width: 100px;
   align-items: center;
   color: #393d8a;
@@ -136,4 +165,67 @@ nav a {
   border: rgb(61, 46, 46) 1px solid;
   color: black;
   margin-bottom: 20px;
+}
+
+.popup {
+  opacity: 100%;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.icon {
+  width: 40px;
+}
+
+.skills {
+  margin-top: 180px;
+}
+
+.logos {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  margin: auto;
+  width: 80%;
+  gap: 20px;
+  overflow: hidden;
+}
+.logos .logo {
+  width: 100px;
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-960%);
+  }
+}
+
+.about {
+  z-index: 4;
+  position: fixed;
+  background-color: #1f1f1f;
+  width: 70%;
+  height: 500px;
+  padding: 40px;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.about .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.about .email {
+  display: flex;
+  gap: 10px;
+}
+.about .email .email-icon {
+  width: 20px;
 }/*# sourceMappingURL=style.css.map */
